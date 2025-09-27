@@ -1,12 +1,13 @@
 def largest_triangle_area(points: list[list[int]]) -> float:
     largest_area = 0
-    for i in range(len(points)):
-        for j in range(len(points)):
-            for k in range(len(points)):
+    n = len(points)
+    for i in range(n):
+        for j in range(i + 1, n):
+            for k in range(j + 1, n):
                 p, q, r = points[i], points[j], points[k]
-                area = 0.5 * abs(p[0] * q[1] + q[0] * r[1] + r[0] * p[1]
-                                 - p[1] * q[0] - q[1] * r[0] - r[1] * p[0])
-                largest_area = max(area, largest_area)
+                area = 0.5 * abs(p[0] * q[1] + q[0] * r[1] + r[0] * p[1] - p[1] * q[0] - q[1] * r[0] - r[1] * p[0])
+                if area > largest_area:
+                    largest_area = area
     return largest_area
 
 
