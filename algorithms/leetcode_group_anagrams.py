@@ -1,6 +1,7 @@
 from collections import defaultdict
 
-def groupAnagrams(strs: list[str]) -> list[list[str]]:
+
+def group_anagrams(strs: list[str]) -> list[list[str]]:
     groups = defaultdict(list)
     for word in strs:
         key = ''.join(sorted(word))
@@ -8,4 +9,8 @@ def groupAnagrams(strs: list[str]) -> list[list[str]]:
 
     return list(groups.values())
 
-print(groupAnagrams(["abc"]))
+
+print(group_anagrams(["abc"]))
+print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(group_anagrams([""]))
+print(group_anagrams(["a"]))
