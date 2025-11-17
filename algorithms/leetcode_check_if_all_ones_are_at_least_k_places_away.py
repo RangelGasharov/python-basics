@@ -1,4 +1,4 @@
-def kLengthApart(nums: list[int], k: int) -> bool:
+def k_length_apart(nums: list[int], k: int) -> bool:
     last_index = -k - 1
     for i in range(len(nums)):
         if nums[i] == 1:
@@ -8,7 +8,7 @@ def kLengthApart(nums: list[int], k: int) -> bool:
     return True
 
 
-print(kLengthApart([1, 0, 0, 0, 1, 0, 0, 1], 2))
-print(kLengthApart([1, 0, 0, 1, 0, 1], 2))
-print(kLengthApart([0, 0, 0, 0], 1))
-print(kLengthApart([0, 1, 1], 0))
+print(k_length_apart([1, 0, 0, 0, 1, 0, 0, 1], 2))
+print(k_length_apart([1, 0, 0, 1, 0, 1], 2))
+print(k_length_apart([0, 0, 0, 0], 1))
+print(k_length_apart([0, 1, 1], 0))
