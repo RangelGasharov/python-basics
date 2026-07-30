@@ -1,14 +1,13 @@
 def minimum_pushes(word: str) -> int:
     total = 0
-    for letter in word:
-        if letter in ["a", "d", "g", "j", "m", "p", "t", "w"]:
-            total += 1
-        elif letter in ["b", "e", "h", "k", "n", "q", "u", "x"]:
-            total += 2
-        elif letter in ["c", "f", "i", "l", "o", "r", "v", "y"]:
-            total += 3
-        else:
-            total += 4
+    distinct_letters = len(word)
+    i = 1
+
+    while distinct_letters > 0:
+        total += i * min(distinct_letters, 8)
+        distinct_letters -= 8
+        i += 1
+
     return total
 
 print(minimum_pushes("abcde"))
