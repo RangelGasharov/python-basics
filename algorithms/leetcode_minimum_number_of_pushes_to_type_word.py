@@ -10,5 +10,12 @@ def minimum_pushes(word: str) -> int:
 
     return total
 
+def minimum_pushes2(word: str) -> int:
+    n = len(word)
+    k = (n + 7) // 8
+    return k * (n + 4 - 4 * k)
+
 print(minimum_pushes("abcde"))
 print(minimum_pushes("xycdefghij"))
+print(minimum_pushes2("abcde"))
+print(minimum_pushes2("xycdefghij"))
