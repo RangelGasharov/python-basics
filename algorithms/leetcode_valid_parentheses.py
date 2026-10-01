@@ -1,4 +1,4 @@
-def is_valid(s: str) -> bool:
+"""def is_valid(s: str) -> bool:
     if len(s) <= 1:
         return False
     closing_dictionary = {"(": ")", "[": "]", "{": "}"}
@@ -14,7 +14,20 @@ def is_valid(s: str) -> bool:
             current_openings.pop()
     if len(current_openings) >= 1:
         return False
-    return True
+    return True"""
+
+
+def is_valid(s: str) -> bool:
+    parentheses_mapping = {")": "(", "]": "[", "}": "{"}
+    stack = []
+
+    for char in s:
+        if char in "([{":
+            stack.append(char)
+        elif not stack or parentheses_mapping[char] != stack.pop():
+            return False
+
+    return len(stack) == 0
 
 
 print(is_valid("()"))
