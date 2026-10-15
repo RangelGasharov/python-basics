@@ -1,3 +1,6 @@
+from typing import List
+
+
 def sum_counts(nums: List[int]) -> int:
     total = 0
     n = len(nums)
